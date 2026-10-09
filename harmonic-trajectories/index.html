@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><title>谐波轨迹实验室 · 数学可视化</title><style>:root{color-scheme:dark;--bg:#080d12;--panel:#111b23;--line:#25343f;--ink:#eff5f7;--muted:#94a8b5;--gold:#efe974;--cyan:#6be0d6}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 10% 0%,#17303265,transparent 48%),var(--bg);color:var(--ink);font:14px/1.55 system-ui,'Microsoft YaHei',sans-serif}button,input,select{font:inherit}button,select{cursor:pointer}button{color:var(--ink);background:#192631;border:1px solid #344754;border-radius:9px;padding:9px 13px;transition:background .15s,border-color .15s}button:hover{background:#273945;border-color:#7a99a7}button:disabled{opacity:.4;cursor:default}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}a{color:#8ccdc4;text-decoration:none}a:hover{text-decoration:underline}[hidden]{display:none!important}.top,.workspace,footer{max-width:1440px;margin:auto;padding-left:30px;padding-right:30px}.top{padding-top:28px;padding-bottom:23px;display:flex;align-items:center;justify-content:space-between;gap:20px}.back{color:#90aab6;font-size:12px}h1{margin:10px 0 4px;font-size:clamp(26px,3vw,38px);font-weight:750;letter-spacing:1px}h1 span{color:var(--gold);margin-left:6px}.top p{margin:0;color:var(--muted);font-size:13px}.header-meta{text-align:right;display:flex;flex-direction:column;gap:13px}.offline{border:1px solid #334f4b;color:#afd2c6;border-radius:20px;padding:7px 14px;font-size:11px}.tiny{font-size:10px;letter-spacing:2.2px;color:#6d909f}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 348px;gap:24px;align-items:start;padding-bottom:24px}.visuals,.controls{min-width:0}.tabs{display:flex;gap:5px;background:#101a21;border:1px solid var(--line);border-radius:13px;padding:5px;margin-bottom:13px}.tabs button{flex:1;background:transparent;border-color:transparent;white-space:nowrap;padding:9px 4px;font-size:13px}.tabs button[aria-pressed=true]{background:#303923;color:#f5f0a3;border-color:#7c803340}.tabs button span{font-size:10px;opacity:.65;margin-left:5px}.drawing{height:clamp(400px,calc(100dvh - 330px),610px);min-height:390px;position:relative;background:#030608;border:1px solid var(--line);border-radius:15px;overflow:hidden}.drawing canvas{width:100%;height:100%;display:block}.canvas-top,.canvas-bottom{position:absolute;left:22px;right:22px;display:flex;align-items:center;justify-content:space-between;gap:8px;pointer-events:none}.canvas-top{top:16px;color:#b0bec5;font-size:12px}.canvas-bottom{bottom:14px;color:#70909c;font:11px ui-monospace,Consolas,monospace}.badge{font-size:10px;color:#bfcb7f;border:1px solid #454b2e;border-radius:15px;padding:4px 9px;background:#11150bb0}.transport{display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding-top:14px}.transport button{font-size:12px;white-space:nowrap}.primary{background:var(--gold);border-color:#e3db59;color:#272b0c;font-weight:700;min-width:91px}.primary:hover{background:#ffff9b;color:#212809}.speed{margin-left:auto;min-width:126px;width:150px}.speed label{display:flex;justify-content:space-between;font-size:11px;color:#849fab}.speed output{color:#d6e0bf}input[type=range]{width:100%;height:17px;accent-color:var(--gold);cursor:pointer;margin:4px 0;display:block}.timeline{padding:13px 0 14px}.progress-track{height:3px;background:#24313b;border-radius:5px;overflow:hidden}.progress-track span{display:block;height:100%;width:0;background:var(--gold)}.timeline>div:last-child{display:flex;justify-content:space-between;gap:10px;margin-top:7px;color:#76929e;font-size:10px}.waves{display:grid;grid-template-columns:1fr 1fr;gap:12px}.wave-card{min-width:0;background:#111b23;border:1px solid var(--line);border-radius:12px;overflow:hidden}.wave-card>div{display:flex;align-items:center;gap:8px;padding:12px 15px 0;font-size:11px}.wave-card strong{font-weight:550;color:#c5d4db}.wave-card output{margin-left:auto;font:11px ui-monospace,Consolas,monospace;color:#adc6c9}.wave-key{font-size:10px;border-radius:5px;padding:2px 6px}.wave-key.x{background:#e9de6630;color:var(--gold)}.wave-key.y{background:#6de0d625;color:var(--cyan)}.wave-card canvas{display:block;width:100%;height:110px}.wave-card p{margin:0;padding:0 15px 12px;font-size:10px;color:#738e9c}.formula-card{margin-top:14px;padding:18px 20px;background:#111b23;border:1px solid var(--line);border-radius:13px}.section-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}h2{font-size:14px;margin:0;font-weight:650}.section-heading>span{font-size:10px;color:#819aa7}.formula{font:clamp(11px,1.13vw,14px)/1.9 ui-monospace,Consolas,monospace;color:#d8e5cf;overflow-wrap:anywhere}.formula-card p{color:#7f9ba8;font-size:11px;margin:12px 0}.exports{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.exports button{font-size:11px}.controls{display:flex;flex-direction:column;gap:14px}.panel{padding:19px;background:var(--panel);border:1px solid var(--line);border-radius:13px}.presets{display:grid;grid-template-columns:1fr 1fr;gap:6px}.presets button{font-size:11px;text-align:left;padding:8px 10px;background:#15222b;border-color:#253c46}.presets button[aria-pressed=true]{background:#373c21;border-color:#a6ac43;color:#f4efb0}.note{color:#a5b4ba;font-size:11px;line-height:1.8;margin:13px 0 0;min-height:39px}.text-button{border:0;background:transparent;padding:0;color:#a7c5c4;font-size:10px}.select-label{display:flex;justify-content:space-between;align-items:center;gap:14px;font-size:12px;color:#a9bac3;margin-bottom:16px}select{min-width:0;max-width:185px;background:#09121a;border:1px solid #314653;border-radius:8px;color:#d9e3e8;padding:7px 10px;font-size:11px}.param{display:grid;grid-template-columns:1fr 70px;gap:4px 12px;align-items:center;margin:13px 0}.param label{font-size:12px;color:#b8c9cf}.param label span{color:#d9e58b;margin-left:7px;font-family:Georgia,serif;font-size:15px}.param>input[type=range]{grid-column:1/-1}.param>output{text-align:right;font:11px ui-monospace,Consolas,monospace;color:#dae1bc}.value{width:100%;min-width:0;border:1px solid #3b515a;background:#080f15;color:#ebf0d7;text-align:center;border-radius:7px;padding:5px 2px;font:12px ui-monospace,Consolas,monospace}.value[aria-invalid=true]{border-color:#f79f8b}.number-unit{display:flex;align-items:center;gap:5px;color:#7d96a0}.number-unit input{width:56px}.hint{font-size:10px;color:#7f9ba9;line-height:1.7;margin:9px 0 13px}.phase-quick{display:flex;gap:6px;margin:9px 0 18px}.phase-quick button{flex:1;padding:4px;font-size:10px;background:#10212b}.phase-quick button[aria-pressed=true]{color:#f0eaa2;border-color:#939244}.check{display:flex;align-items:center;gap:7px;font-size:11px;color:#a9bfc8;cursor:pointer}.check input{accent-color:var(--gold);margin:0}.checks{display:grid;grid-template-columns:1fr 1fr;gap:14px}.error{background:#55382b60;color:#ffbfac;padding:9px;border-radius:7px;font-size:11px}.harmonic-heading{border-top:1px solid #2a3d46;padding-top:18px;margin-top:18px}h3{font-size:12px;margin:0}.harmonic-heading span{color:#718d99;font-size:9px}.term-axis{font-size:11px;color:#b2c0a0;margin:14px 0 8px}.term-row{display:grid;grid-template-columns:1fr .75fr .85fr 24px;gap:5px;margin:7px 0;align-items:end}.term-row label{display:block;font-size:9px;color:#7796a3;min-width:0}.term-row input{display:block;margin-top:4px;width:100%;min-width:0;font-size:10px;background:#080f15;color:#deece0;border:1px solid #3a5259;border-radius:5px;padding:5px 2px;text-align:center}.term-row button{padding:4px 2px;font-size:13px;height:28px}.add{font-size:10px;padding:6px;width:100%;border-style:dashed;color:#9fcfc3;background:#15202a;margin:5px 0 13px}.help summary{font-size:12px;color:#b8cacd;cursor:pointer}.help p{font-size:11px;line-height:1.9;color:#8fa9b4;margin:12px 0}.help a{font-size:10px}footer{font-size:10px;color:#587987;padding-bottom:25px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#27443c;color:#ecffeb;border:1px solid #658a6c;border-radius:12px;padding:10px 20px;z-index:20;box-shadow:0 10px 30px #0008;font-size:12px;max-width:90vw}.matrix-panel{border:1px solid var(--line);border-radius:15px;background:#04080b;padding:18px}.matrix-intro{display:flex;justify-content:space-between;gap:10px;font-size:12px;margin-bottom:15px}.matrix-intro span{font-size:10px;color:#819aa7}.matrix-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px}.matrix-cell{padding:0;border:1px solid #233a46;border-radius:7px;background:#0c1820;overflow:hidden;min-width:0}.matrix-cell canvas{width:100%;height:auto;display:block;aspect-ratio:1}.matrix-cell span{display:block;font:9px ui-monospace,Consolas,monospace;color:#8fa6b0;padding-bottom:6px}.matrix-cell:hover{border-color:var(--gold)}.matrix-panel p{color:#718c97;font-size:10px;margin-bottom:0}@media(min-width:1500px){.drawing{height:620px}}@media(max-width:1080px){.workspace{grid-template-columns:minmax(0,1fr) 310px;gap:15px}.top,.workspace,footer{padding-left:20px;padding-right:20px}.panel{padding:16px}.drawing{min-height:350px;height:470px}.transport{gap:5px}.speed{width:100%;display:flex;align-items:center;gap:15px;margin:5px 0 0}.speed label{gap:12px;min-width:82px}.speed input{flex:1}.waves{grid-template-columns:1fr}.wave-card canvas{height:95px}}@media(max-width:780px){.workspace{display:block}.controls{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:12px}.parameters{grid-row:span 2}.help{grid-column:1/-1}.drawing{height:480px;min-height:320px}.waves{grid-template-columns:1fr 1fr}.wave-card p{min-height:43px}.header-meta{display:none}.formula{font-size:12px}}@media(max-width:520px){.top,.workspace,footer{padding-left:12px;padding-right:12px}.top{padding-top:20px;padding-bottom:18px}h1{font-size:28px}.tabs button{font-size:12px}.tabs button span{display:none}.drawing{height:410px;min-height:0}.canvas-top,.canvas-bottom{left:14px;right:14px}.canvas-top{font-size:10px}.badge{font-size:9px}.canvas-bottom{font-size:9px}.transport button{flex:1;font-size:11px;padding:9px 5px}.speed{margin:7px 0 0}.controls{display:flex}.panel{padding:18px}.waves{gap:8px}.wave-card>div{padding:10px 10px 0;font-size:10px;gap:5px}.wave-card p{display:none}.wave-card canvas{height:98px}.wave-card output{font-size:10px}.formula-card{padding:16px 14px}.formula{font-size:11px}.timeline>div:last-child{font-size:9px}.matrix-panel{padding:10px}.matrix-grid{gap:3px}.matrix-cell span{font-size:8px}.matrix-intro{font-size:11px}.matrix-intro span{font-size:9px}}@media(max-height:480px) and (min-width:520px){.drawing{height:360px}.top{padding-top:16px}.header-meta{display:none}}@media(prefers-reduced-motion:reduce){button{transition:none}}
+.mobile-params{display:none;font-size:11px;border:1px solid #334e54;border-radius:9px;padding:7px 10px;white-space:nowrap}#parameterPanel{scroll-margin-top:16px}@media(max-width:780px){.mobile-params{display:block}}
+</style></head>
+<body>
+<header class="top"><div><a class="back" href="../index.html">← 数学与科学可视化</a><h1>谐波轨迹<span>实验室</span></h1><p>两个方向的振动，描出一条曲线。</p></div><a class="mobile-params" href="#parameterPanel">调参 ↓</a><div class="header-meta"><span class="offline">个人探索 · 离线可用</span><span class="tiny">LISSAJOUS & HARMONICS</span></div></header>
+<main class="workspace">
+<section class="visuals" aria-label="轨迹与波形">
+<nav class="tabs" aria-label="探索方式"><button data-tab="curve" aria-pressed="true">轨迹绘制</button><button data-tab="scan" aria-pressed="false">相位扫描</button><button data-tab="matrix" aria-pressed="false">频率矩阵 <span>6 × 6</span></button></nav>
+<section id="drawing" class="drawing">
+<div class="canvas-top"><span id="sceneName">参考 A · 3:2</span><span id="periodBadge" class="badge">闭合轨迹</span></div>
+<canvas id="plot" aria-label="由横向与纵向振动组成的动态轨迹"></canvas>
+<div class="canvas-bottom"><span id="pointValue">x 0.000 · y 0.000</span><span id="thetaValue">θ = 0.00π</span></div>
+</section>
+<section id="matrixPanel" class="matrix-panel" hidden><div class="matrix-intro"><strong>选择一组频率</strong><span>列：横向 a · 行：纵向 b</span></div><div id="matrixGrid" class="matrix-grid"></div><p>所有小图使用双轴正弦和当前相位。点选后进入对应轨迹。</p></section>
+<div class="transport"><button id="play" class="primary">Ⅱ 暂停</button><button id="step" title="暂停并前进一个小步">单步 +</button><button id="restart">重新描绘</button><button id="complete">一键画完</button><div class="speed"><label for="speed">速度 <output id="speedOut">1.0×</output></label><input id="speed" type="range" min="0.1" max="3" step="0.1" value="1"></div></div>
+<div class="timeline"><div class="progress-track"><span id="progressFill"></span></div><div><span id="progressText">正在描绘</span><span id="periodText">一个闭合周期</span></div></div>
+<section class="waves" aria-label="同步的横向与纵向波形"><div class="wave-card"><div><span class="wave-key x">X</span><strong>横向振动</strong><output id="waveXValue">0.000</output></div><canvas id="waveX" aria-label="横向坐标随角度变化的波形"></canvas><p>左侧为过去，右侧为接下来；游标对应运动光点。</p></div><div class="wave-card"><div><span class="wave-key y">Y</span><strong>纵向振动</strong><output id="waveYValue">0.000</output></div><canvas id="waveY" aria-label="纵向坐标随角度变化的波形"></canvas><p>两条波形使用相同 θ，同时决定光点的位置。</p></div></section>
+<section class="formula-card"><div class="section-heading"><h2>当前公式</h2><span>相位输入使用角度</span></div><div id="formulaX" class="formula"></div><div id="formulaY" class="formula"></div><p id="formulaNote">θ 随时间推进；0°、90°、180° 分别对应 0、π/2、π。</p><div class="exports"><button id="exportImage">↓ 导出画面 PNG</button><button id="exportConfig">↓ 导出参数 JSON</button></div></section>
+</section>
+<aside class="controls" aria-label="参数配置">
+<section class="panel"><div class="section-heading"><h2>选择形状</h2><span>10 个起点</span></div><div id="presets" class="presets"></div><p id="presetNote" class="note"></p></section>
+<section id="parameterPanel" class="panel parameters"><div class="section-heading"><h2>振动参数</h2><button id="resetParams" class="text-button">恢复参考 A</button></div>
+<label class="select-label" for="model">公式模式<select id="model"><option value="basic">双轴正弦</option><option value="harmonic">谐波叠加</option></select></label>
+<div class="param"><label for="a">横向频率 <span>a</span></label><input id="a" class="value" type="text" inputmode="decimal" value="3" autocomplete="off" spellcheck="false" aria-describedby="frequencyHelp"><input id="aRange" aria-label="横向频率滑块" type="range" min="0.1" max="12" step="0.1" value="3"></div>
+<div class="param"><label for="b">纵向频率 <span>b</span></label><input id="b" class="value" type="text" inputmode="decimal" value="2" autocomplete="off" spellcheck="false" aria-describedby="frequencyHelp"><input id="bRange" aria-label="纵向频率滑块" type="range" min="0.1" max="12" step="0.1" value="2"></div>
+<p id="frequencyHelp" class="hint">可输入 3、3/2、√2、√3；数字最多 4 位小数，范围 0.1～20。</p>
+<div class="param"><label for="phase">相位差 <span>δ</span></label><div class="number-unit"><input id="phase" class="value" type="number" min="0" max="360" step="1" value="90"><span>°</span></div><input id="phaseRange" aria-label="相位差滑块" type="range" min="0" max="360" step="1" value="90"></div>
+<div class="phase-quick" aria-label="相位快捷选择"><button data-phase="0">0°</button><button data-phase="45">45°</button><button data-phase="90">90°</button><button data-phase="180">180°</button></div>
+<div class="param"><label for="A">横向振幅 <span>A</span></label><output id="AOut">1.00</output><input id="A" type="range" min="0.1" max="1" step="0.01" value="1"></div>
+<div class="param"><label for="B">纵向振幅 <span>B</span></label><output id="BOut">1.00</output><input id="B" type="range" min="0.1" max="1" step="0.01" value="1"></div>
+<label class="check"><input id="equalAmp" type="checkbox" checked>保持两轴等幅</label><p id="inputError" class="error" role="status" hidden></p>
+<div id="harmonicPanel" hidden><div class="harmonic-heading"><h3>附加谐波</h3><span>每轴最多 4 个分量（含主波）</span></div><div id="xTerms"></div><button id="addX" class="add">＋ 添加横向谐波</button><div id="yTerms"></div><button id="addY" class="add">＋ 添加纵向谐波</button><label class="check"><input id="normalize" type="checkbox" checked>按振幅总和归一化</label><p class="hint">小振幅改变细节，大振幅改变主轮廓。主波的相位差只作用于横向主波。</p></div>
+</section>
+<section class="panel"><div class="section-heading"><h2>画面选项</h2></div><label class="select-label" for="view">轨迹<select id="view"><option value="draw">逐步描绘</option><option value="full">完整曲线</option><option value="trail">渐隐拖尾</option></select></label><label class="select-label" for="color">颜色<select id="color"><option value="yellow">柠檬黄</option><option value="cyan">薄荷青</option><option value="pink">珊瑚粉</option></select></label><div class="param"><label for="lineWidth">线条宽度</label><output id="lineWidthOut">2.4</output><input id="lineWidth" type="range" min="1" max="5" step="0.1" value="2.4"></div><div class="param"><label for="turns">观察长度</label><output id="turnsOut">8 周期</output><input id="turns" type="range" min="1" max="12" step="1" value="8"></div><p class="hint">非闭合或闭合周期过长时，使用这段观察长度。</p><div class="checks"><label class="check"><input id="glow" type="checkbox" checked>柔光</label><label class="check"><input id="axes" type="checkbox" checked>坐标轴</label><label class="check"><input id="projections" type="checkbox">投影线</label><label class="check"><input id="ghost" type="checkbox" checked>淡色参考线</label></div></section>
+<details class="panel help"><summary>怎么读懂这个实验？</summary><p>横向波形决定 x，纵向波形决定 y。让两种运动同时发生，就得到平面上的轨迹。</p><p>整数或分数频率可以周期闭合。√2、√3 等无理数与整数搭配时不会精确闭合。长周期仅展示截取范围，首尾不强行连线。</p><p>相位扫描会持续改变 δ，显示每个时刻对应的完整曲线。暂停后可以单步观察。</p><p>第二张参考截图的额外谐波公式尚未确定；叠加预设是探索示例。</p><a href="https://mathworld.wolfram.com/LissajousCurve.html" target="_blank" rel="noopener">利萨茹曲线 · 数学来源 ↗</a></details>
+</aside>
+</main><footer>个人数学可视化 · 谐波轨迹实验室 <span>θ = 2πt / 6 s（1× 时） · 无音频</span></footer><div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<script>(function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else root.Harmonics=api;})(typeof globalThis==='object'?globalThis:this,function(){
+'use strict';
+const TAU=Math.PI*2;
+const gcd=(a,b)=>{a=Math.abs(a);b=Math.abs(b);while(b){const t=b;b=a%b;a=t;}return a;};
+const lcm=(a,b)=>a/gcd(a,b)*b;
+function frequency(raw){
+ const text=String(raw).trim().replace(/\s/g,'');let value,p,q;
+ const radical=text.match(/^(?:√([23])|sqrt\(([23])\))$/i);
+ if(radical)return {text:'√'+(radical[1]||radical[2]),value:Math.sqrt(Number(radical[1]||radical[2])),rational:null};
+ const ratio=text.match(/^(\d{1,4})\/(\d{1,4})$/),decimal=text.match(/^(\d{1,2})(?:\.(\d{1,4}))?$/);
+ if(ratio){p=Number(ratio[1]);q=Number(ratio[2]);if(q===0)throw Error('分母不能为 0');}
+ else if(decimal){q=10**(decimal[2]?.length||0);p=Number(decimal[1])*q+Number(decimal[2]||0);}
+ else throw Error('请输入数字、分数（如 3/2），或 √2、√3');
+ value=p/q;if(!Number.isFinite(value)||value<.1||value>20)throw Error('频率倍数范围为 0.1～20');
+ const g=gcd(p,q);return {text,value,rational:{p:p/g,q:q/g}};
+}
+function components(config,axis){
+ const main={frequency:frequency(config[axis==='x'?'a':'b']),amplitude:1,phase:axis==='x'?config.phase:0};
+ const extra=config.model==='harmonic'?config[axis+'Terms'].filter(t=>Math.abs(t.amplitude)>1e-12).map(t=>({...t,frequency:frequency(t.frequency)})):[];
+ return [main,...extra];
+}
+function evaluator(config){const axes=['x','y'].map(axis=>{const terms=components(config,axis),divisor=config.normalize?terms.reduce((n,t)=>n+Math.abs(t.amplitude),0):1;return {gain:config[axis==='x'?'A':'B']/divisor,terms:terms.map(t=>({f:t.frequency.value,a:t.amplitude,p:t.phase*Math.PI/180}))};});return theta=>({x:axes[0].gain*axes[0].terms.reduce((n,t)=>n+t.a*Math.sin(t.f*theta+t.p),0),y:axes[1].gain*axes[1].terms.reduce((n,t)=>n+t.a*Math.sin(t.f*theta+t.p),0)});}
+function point(config,theta){return evaluator(config)(theta);}
+function period(config){
+ const fs=[...components(config,'x'),...components(config,'y')].map(t=>t.frequency);
+ if(fs.some(f=>!f.rational)){
+  if(fs.every(f=>!f.rational&&f.text===fs[0].text)){const turns=1/fs[0].value;return {closed:true,turns,theta:TAU*turns,reason:'两轴同频，具有共同周期'};}
+  return {closed:false,turns:null,theta:null,reason:'频率之间含无理数比，不会精确闭合'};
+ }
+ let denominator=1;for(const f of fs){denominator=lcm(denominator,f.rational.q);if(!Number.isSafeInteger(denominator)||denominator>1e12)return {closed:true,turns:null,theta:null,reason:'有理频率，闭合周期超出计算范围'};}
+ let numerator=0;for(const f of fs)numerator=gcd(numerator,f.rational.p*(denominator/f.rational.q));const turns=denominator/numerator;return {closed:true,turns,theta:TAU*turns,reason:'有理频率，轨迹周期闭合'};
+}
+function windowInfo(config){const p=period(config),truncated=!p.theta||p.turns>12,turns=truncated?config.turns:p.turns;return {...p,truncated,windowTheta:TAU*turns,windowTurns:turns};}
+function formula(config,axis){
+ const terms=components(config,axis),gain=config[axis==='x'?'A':'B'],divisor=config.normalize?terms.reduce((n,t)=>n+Math.abs(t.amplitude),0):1;
+ const f=v=>Number(v.toFixed(3)).toString(),angle=v=>{if(v===0)return '';const known={45:'π/4',90:'π/2',180:'π',270:'3π/2',360:'2π'};return ' + '+(known[v]||f(v)+'π/180');};
+ const sum=terms.map((t,i)=>`${i?' + ':''}${t.amplitude===1?'':f(t.amplitude)+'·'}sin(${t.frequency.text}θ${angle(t.phase)})`).join('');
+ return `${axis}(θ) = ${f(gain)}${divisor===1?'':'/'+f(divisor)} · [${sum}]`;
+}
+const defaults=()=>({a:'3',b:'2',phase:90,A:1,B:1,lockAmplitude:true,model:'basic',xTerms:[],yTerms:[],normalize:true,view:'draw',speed:1,turns:8,trail:.7,color:'yellow',lineWidth:2.4,glow:true,axes:true,projections:false,ghost:true});
+const presets=[
+ {id:'reference',name:'参考 A · 3:2',a:'3',b:'2',phase:90,note:'第一张截图的标注参数：δ = π/2，a = 3，b = 2。'},
+ {id:'line',name:'同步直线',a:'1',b:'1',phase:0,note:'两轴同频、同相，点在直线上往返。'},
+ {id:'circle',name:'四分之一周期 · 圆',a:'1',b:'1',phase:90,note:'等幅、同频，相位差 90°，形成圆。'},
+ {id:'ellipse',name:'相位椭圆',a:'1',b:'1',phase:45,note:'保持同频，改变相位便能从直线过渡到椭圆。'},
+ {id:'eight',name:'双环 · 2:1',a:'2',b:'1',phase:0,note:'横向频率为纵向的两倍，形成双环。'},
+ {id:'five-four',name:'参考 B · 标准 5:4',a:'5',b:'4',phase:90,note:'第二张截图的标准正弦对照。其细节还需要原视频或完整公式，不能据此认定准确复刻。'},
+ {id:'woven',name:'密集交织 · 7:6',a:'7',b:'6',phase:90,note:'互质整数频率构成更密集的交叉轨迹。'},
+ {id:'irrational',name:'不闭合 · √2:1',a:'√2',b:'1',phase:90,note:'无理数频率比不会精确闭合；这里仅显示一段轨迹，不连接首尾。'},
+ {id:'ripple',name:'波纹环 · 叠加',a:'1',b:'1',phase:90,model:'harmonic',color:'cyan',xTerms:[{frequency:'5',amplitude:.22,phase:90}],yTerms:[{frequency:'4',amplitude:.22,phase:0}],note:'在主运动上叠加较弱高次谐波，观察边缘的小起伏。'},
+ {id:'knot',name:'谐波花结 · 叠加',a:'3',b:'2',phase:90,model:'harmonic',color:'cyan',xTerms:[{frequency:'9',amplitude:.25,phase:20},{frequency:'15',amplitude:.1,phase:0}],yTerms:[{frequency:'6',amplitude:.2,phase:0},{frequency:'10',amplitude:.12,phase:90}],note:'多分量的探索预设，用于理解复杂轮廓；不是第二张截图的精确复刻。'}
+];
+function preset(id){const p=presets.find(p=>p.id===id);if(!p)throw Error('Unknown preset');return {...defaults(),...JSON.parse(JSON.stringify(p))};}
+return {TAU,gcd,frequency,components,evaluator,point,period,windowInfo,formula,defaults,presets,preset};
+});
+</script><script>(()=>{
+'use strict';
+const H=window.Harmonics,$=id=>document.getElementById(id),TAU=H.TAU,clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const colors={yellow:'#eee977',cyan:'#63e2d7',pink:'#ff9caa'},plot=$('plot'),wx=$('waveX'),wy=$('waveY');
+let config=H.preset('reference'),tab='curve',playing=!matchMedia('(prefers-reduced-motion: reduce)').matches,theta=0,maxTheta=0,frames=0,info,fn,points,pointCount=0,extent=1,last=0,lastUI=0,matrixDirty=true,toastTimer;
+const clone=v=>JSON.parse(JSON.stringify(v));
+function prepare(reset=true){
+ if(reset){theta=0;maxTheta=0;}
+ info=H.windowInfo(config);fn=H.evaluator(config);
+ const cs=['x','y'].map(axis=>H.components(config,axis));
+ extent=Math.max(1,...cs.map((terms,i)=>config[i?'B':'A']*(config.normalize?1:terms.reduce((s,t)=>s+Math.abs(t.amplitude),0))));
+ const maxF=Math.max(...cs.flat().map(t=>t.frequency.value));pointCount=Math.min(18000,Math.max(1200,Math.ceil(info.windowTheta*maxF*50)));
+ points=new Float64Array((pointCount+1)*2);for(let i=0;i<=pointCount;i++){const p=fn(i/pointCount*info.windowTheta);points[2*i]=p.x;points[2*i+1]=p.y;}
+ matrixDirty=true;
+}
+function error(message,control){$('inputError').textContent=message;$('inputError').hidden=false;if(control)control.setAttribute('aria-invalid','true');}
+function clearError(){ $('inputError').hidden=true;document.querySelectorAll('[aria-invalid=true]').forEach(i=>i.removeAttribute('aria-invalid')); }
+function custom(){config.id='custom';config.name='自定义轨迹';config.note='改变频率、相位与振幅，观察两条波形如何共同决定轨迹。';}
+function change(mutator,reset=true){mutator();custom();prepare(reset);sync();render();}
+function usePreset(id){config=H.preset(id);tab='curve';playing=true;clearError();prepare();renderTerms();sync();render();}
+function sync(){
+ for(const axis of ['a','b']){$(axis).value=config[axis];$(axis+'Range').value=H.frequency(config[axis]).value;}
+ $('phase').value=+config.phase.toFixed(1);$('phaseRange').value=config.phase;
+ for(const key of ['A','B','speed','lineWidth','turns'])$(key).value=config[key];
+ for(const key of ['normalize','glow','axes','projections','ghost'])$(key).checked=config[key];
+ for(const key of ['model','view','color'])$(key).value=config[key];
+ $('AOut').value=config.A.toFixed(2);$('BOut').value=config.B.toFixed(2);$('speedOut').value=config.speed.toFixed(1)+'×';$('lineWidthOut').value=config.lineWidth.toFixed(1);$('turnsOut').value=config.turns+' 周期';
+ $('equalAmp').checked=config.lockAmplitude;$('harmonicPanel').hidden=config.model!=='harmonic';$('view').disabled=tab==='scan';
+ document.querySelectorAll('[data-tab]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.tab===tab)));
+ document.querySelectorAll('[data-preset]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.preset===config.id)));
+ document.querySelectorAll('[data-phase]').forEach(b=>b.setAttribute('aria-pressed',String(Math.abs(config.phase-Number(b.dataset.phase))<.1)));
+ $('presetNote').textContent=tab==='scan'?'相位以 22.5°/秒（1×）扫描，每一帧显示当前相位的完整曲线。':config.note;
+ $('drawing').hidden=tab==='matrix';$('matrixPanel').hidden=tab!=='matrix';
+ for(const selector of ['.transport','.timeline','.waves','.formula-card'])document.querySelector(selector).hidden=tab==='matrix';
+ syncLive();if(tab==='matrix')renderMatrix();
+}
+function syncLive(){
+ document.querySelectorAll('[data-preset]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.preset===config.id)));
+ $('play').textContent=playing?'Ⅱ 暂停':'▶ 播放';$('step').disabled=tab==='matrix';$('complete').disabled=tab==='scan';
+ $('sceneName').textContent=tab==='scan'?'相位扫描 · δ = '+config.phase.toFixed(1)+'°':config.name;
+ $('periodBadge').textContent=info.closed?(info.truncated?'长周期 · 当前为截取':'闭合轨迹'):'非闭合轨迹';
+ $('formulaX').textContent=H.formula(config,'x');$('formulaY').textContent=H.formula(config,'y');
+ $('formulaNote').textContent=(config.model==='harmonic'&&config.normalize?'除以振幅绝对值总和，保留形状并约束画面范围。 ':'')+'θ = 2πt/6 s（1×）；'+(info.closed?`一个闭合周期为 ${info.turns===null?'超长':+info.turns.toFixed(6)+' 个基础周期'}。`:'含无理数频率，首尾不精确重合。');
+ const p=fn(theta);$('pointValue').textContent='x '+p.x.toFixed(3)+' · y '+p.y.toFixed(3);$('thetaValue').textContent='θ = '+(theta/Math.PI).toFixed(2)+'π';
+ $('waveXValue').value=p.x.toFixed(3);$('waveYValue').value=p.y.toFixed(3);
+ const progress=tab==='scan'?config.phase/360:Math.min(maxTheta/info.windowTheta,1);$('progressFill').style.width=progress*100+'%';
+ $('progressText').textContent=tab==='scan'?'扫描相位 '+config.phase.toFixed(1)+'°':config.view==='trail'?'渐隐拖尾 · '+(playing?'持续观察':'已暂停'):maxTheta>=info.windowTheta?(info.truncated?'观察段完成 · 未连接首尾':'完整轨迹 · '+(playing?'光点继续运动':'已暂停')):'已描绘 '+Math.floor(progress*100)+'%';
+ $('periodText').textContent=tab==='scan'?'0° → 360° 循环':info.truncated?'观察 '+info.windowTurns+' 个基础周期':`${+info.turns.toFixed(4)} 个基础周期 · ${(info.turns*6/config.speed).toFixed(2)} s`;
+ if(tab==='scan'){$('phase').value=+config.phase.toFixed(1);$('phaseRange').value=config.phase;}
+}
+function setupCanvas(canvas){const r=canvas.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2),w=Math.max(1,r.width),h=Math.max(1,r.height);if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(h*dpr)){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);}const ctx=canvas.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);return {ctx,w,h};}
+function renderPlot(){
+ const {ctx,w,h}=setupCanvas(plot);ctx.clearRect(0,0,w,h);ctx.fillStyle='#030608';ctx.fillRect(0,0,w,h);
+ const ox=w/2,oy=h/2+2,scale=Math.max(1,Math.min(w-88,h-112)/2/extent),map=p=>({x:ox+p.x*scale,y:oy-p.y*scale});
+ if(config.axes){ctx.lineWidth=1;ctx.strokeStyle='#263139';ctx.setLineDash([3,6]);ctx.beginPath();ctx.moveTo(28,oy);ctx.lineTo(w-28,oy);ctx.moveTo(ox,55);ctx.lineTo(ox,h-47);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#57717c';ctx.font='10px ui-monospace,Consolas';ctx.fillText('x',w-32,oy-9);ctx.fillText('y',ox+8,60);ctx.fillText('0',ox+6,oy+14);for(const val of [-1,1]){ctx.fillText(String(val),ox+val*scale-4,oy+15);ctx.fillText(String(val),ox+7,oy-val*scale+4);}}
+ const color=colors[config.color];
+ function cachedPath(end){const count=Math.min(pointCount,Math.floor(end/info.windowTheta*pointCount));ctx.beginPath();for(let i=0;i<=count;i++){const x=ox+points[i*2]*scale,y=oy-points[i*2+1]*scale;if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}const p=map(fn(end));ctx.lineTo(p.x,p.y);}
+ if(config.ghost&&tab!=='scan'&&config.view!=='full'){ctx.save();ctx.globalAlpha=.15;ctx.strokeStyle=color;ctx.lineWidth=1;cachedPath(info.windowTheta);ctx.stroke();ctx.restore();}
+ ctx.save();ctx.lineJoin=ctx.lineCap='round';ctx.strokeStyle=color;ctx.lineWidth=config.lineWidth;if(config.glow){ctx.shadowColor=color;ctx.shadowBlur=10;}
+ if(tab==='scan'||config.view==='full'){cachedPath(info.windowTheta);ctx.stroke();}
+ else if(config.view==='draw'){cachedPath(Math.min(maxTheta,info.windowTheta));ctx.stroke();}
+ else{
+  const length=config.trail*TAU,start=theta-length,N=Math.min(2400,Math.max(360,Math.ceil(length*80*Math.max(H.frequency(config.a).value,H.frequency(config.b).value)))),chunks=24;
+  for(let chunk=0;chunk<chunks;chunk++){ctx.globalAlpha=((chunk+1)/chunks)**1.6;ctx.beginPath();const lo=Math.floor(chunk*N/chunks),hi=Math.floor((chunk+1)*N/chunks);for(let i=lo;i<=hi;i++){const p=map(fn(start+i/N*length));if(i===lo)ctx.moveTo(p.x,p.y);else ctx.lineTo(p.x,p.y);}ctx.stroke();}
+ }
+ ctx.restore();const p=map(fn(theta));
+ if(config.projections){ctx.save();ctx.strokeStyle=color;ctx.globalAlpha=.45;ctx.lineWidth=1;ctx.setLineDash([4,5]);ctx.beginPath();ctx.moveTo(p.x,oy);ctx.lineTo(p.x,p.y);ctx.lineTo(ox,p.y);ctx.stroke();ctx.restore();for(const v of [{x:p.x,y:oy},{x:ox,y:p.y}]){ctx.fillStyle=color;ctx.beginPath();ctx.arc(v.x,v.y,3,0,TAU);ctx.fill();}}
+ ctx.save();ctx.fillStyle=color;ctx.globalAlpha=.15;ctx.beginPath();ctx.arc(p.x,p.y,14,0,TAU);ctx.fill();ctx.globalAlpha=1;if(config.glow){ctx.shadowColor=color;ctx.shadowBlur=15;}ctx.beginPath();ctx.arc(p.x,p.y,5,0,TAU);ctx.fill();ctx.restore();
+}
+function renderWave(canvas,axis,color){
+ const {ctx,w,h}=setupCanvas(canvas),ox=w/2,oy=h*.49,scale=(h-36)/2/extent;
+ ctx.clearRect(0,0,w,h);ctx.strokeStyle='#2a3d46';ctx.lineWidth=1;ctx.setLineDash([3,5]);ctx.beginPath();ctx.moveTo(12,oy);ctx.lineTo(w-12,oy);ctx.moveTo(ox,14);ctx.lineTo(ox,h-16);ctx.stroke();ctx.setLineDash([]);
+ const N=320;for(const future of [false,true]){ctx.save();ctx.globalAlpha=future?.25:1;ctx.strokeStyle=color;ctx.lineWidth=1.7;ctx.beginPath();const begin=future?N/2:0,end=future?N:N/2;for(let i=begin;i<=end;i++){const t=theta+(i/N-.5)*TAU,p=fn(t),x=12+i/N*(w-24),y=oy-p[axis]*scale;if(i===begin)ctx.moveTo(x,y);else ctx.lineTo(x,y);}ctx.stroke();ctx.restore();}
+ const v=fn(theta)[axis];ctx.fillStyle=color;ctx.beginPath();ctx.arc(ox,oy-v*scale,4,0,TAU);ctx.fill();ctx.fillStyle='#597682';ctx.font='9px ui-monospace,Consolas';ctx.fillText('θ − π',12,h-6);ctx.textAlign='center';ctx.fillText('当前 θ',ox,h-6);ctx.textAlign='right';ctx.fillText('θ + π',w-12,h-6);ctx.textAlign='left';
+}
+function renderMatrix(){
+ if(!matrixDirty)return;matrixDirty=false;
+ document.querySelectorAll('.matrix-cell').forEach(b=>{const canvas=b.querySelector('canvas'),ctx=canvas.getContext('2d'),a=b.dataset.a,y=b.dataset.b,c={...config,a,b:y,model:'basic'},evaluate=H.evaluator(c),period=H.period(c);ctx.clearRect(0,0,180,180);ctx.fillStyle='#0c1820';ctx.fillRect(0,0,180,180);ctx.strokeStyle=colors[config.color];ctx.lineWidth=1.8;ctx.beginPath();for(let i=0;i<=900;i++){const p=evaluate(i/900*period.theta),x=90+p.x*70,y=90-p.y*70;if(!i)ctx.moveTo(x,y);else ctx.lineTo(x,y);}ctx.stroke();});
+}
+function render(){if(tab==='matrix'){renderMatrix();return;}renderPlot();renderWave(wx,'x',colors[config.color]);renderWave(wy,'y',config.color==='cyan'?'#eee977':'#63e2d7');}
+function advance(seconds){
+ if(!playing||tab==='matrix')return;
+ if(tab==='scan'){config.phase=(config.phase+seconds*22.5*config.speed)%360;custom();prepare(false);}
+ theta+=seconds*TAU/6*config.speed;maxTheta=Math.max(theta,maxTheta);
+ if(tab!=='scan'&&info.truncated&&config.view!=='trail'&&theta>=info.windowTheta){theta=info.windowTheta;maxTheta=theta;playing=false;}
+}
+function frame(t){const dt=last?Math.min((t-last)/1000,.08):0;last=t;frames++;if(!document.hidden){advance(dt);if(playing||frames<3)render();if(t-lastUI>100){syncLive();lastUI=t;}}requestAnimationFrame(frame);}
+function renderTerms(){
+ for(const axis of ['x','y']){
+  const container=$(axis+'Terms');container.replaceChildren();const head=document.createElement('div');head.className='term-axis';head.textContent=(axis==='x'?'横向 X':'纵向 Y')+' · 主波 + '+config[axis+'Terms'].length+' 个附加分量';container.append(head);
+  config[axis+'Terms'].forEach((term,index)=>{
+   const row=document.createElement('div');row.className='term-row';
+   for(const [key,title] of [['frequency','频率倍数'],['amplitude','振幅系数'],['phase','相位 °']]){
+    const label=document.createElement('label');label.textContent=title;const input=document.createElement('input');input.type=key==='frequency'?'text':'number';input.value=term[key];input.setAttribute('aria-label',`${axis==='x'?'横向':'纵向'}谐波 ${index+1} ${title}`);if(key==='amplitude'){input.min=0;input.max=1;input.step=.01;}if(key==='phase'){input.min=0;input.max=360;input.step=1;}
+    input.addEventListener('change',()=>{try{const value=key==='frequency'?H.frequency(input.value).text:Number(input.value);if(key!=='frequency'&&(!Number.isFinite(value)||input.value.trim()===''||value<0||value>(key==='phase'?360:1)))throw Error(key==='phase'?'相位范围为 0°～360°':'振幅系数范围为 0～1');clearError();change(()=>term[key]=value);renderTerms();}catch(e){error(e.message,input);}});label.append(input);row.append(label);
+   }
+   const remove=document.createElement('button');remove.textContent='×';remove.setAttribute('aria-label',`移除${axis==='x'?'横向':'纵向'}谐波 ${index+1}`);remove.addEventListener('click',()=>{change(()=>config[axis+'Terms'].splice(index,1));renderTerms();});row.append(remove);container.append(row);
+  });$(axis==='x'?'addX':'addY').disabled=config[axis+'Terms'].length>=3;
+ }
+}
+function setTab(next){tab=next;if(tab==='matrix')playing=false;else if(tab==='scan')playing=true;sync();render();}
+function toast(message){clearTimeout(toastTimer);$('toast').textContent=message;$('toast').hidden=false;toastTimer=setTimeout(()=>$('toast').hidden=true,2500);}
+function download(blob,name){const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),5000);}
+function exportConfig(){return {title:'谐波轨迹实验室',version:1,config:clone(config),formulas:{x:H.formula(config,'x'),y:H.formula(config,'y')},period:H.period(config),observation:info,theta,thetaRateRadiansPerSecond:TAU/6*config.speed,scanDegreesPerSecond:22.5*config.speed,referenceNote:'参考 B 的完整公式未知；谐波叠加预设为探索示例。'};}
+function imageCanvas(){
+ render();const out=document.createElement('canvas');out.width=1600;const chartHeight=Math.round(1456*plot.height/plot.width);out.height=chartHeight+440;const c=out.getContext('2d');c.fillStyle='#080d12';c.fillRect(0,0,out.width,out.height);c.fillStyle='#eff5f7';c.font='600 32px sans-serif';c.fillText('谐波轨迹实验室',72,63);c.fillStyle='#91abae';c.font='18px sans-serif';c.fillText(config.name+' · δ = '+config.phase.toFixed(1)+'° · '+(info.closed?(info.truncated?'长周期截取':'闭合轨迹'):'非闭合轨迹'),72,101);c.drawImage(plot,72,125,1456,chartHeight);const y=125+chartHeight+24;c.drawImage(wx,72,y,704,140);c.drawImage(wy,824,y,704,140);c.fillStyle='#d4e5c8';c.font='16px monospace';c.fillText(H.formula(config,'x'),72,y+180,1456);c.fillText(H.formula(config,'y'),72,y+209,1456);c.fillStyle='#778f9a';c.font='15px sans-serif';c.fillText('θ = '+(theta/Math.PI).toFixed(3)+'π · 个人数学可视化 · 不连接非闭合轨迹的首尾',72,y+251);return out;
+}
+H.presets.forEach(p=>{const b=document.createElement('button');b.textContent=p.name;b.dataset.preset=p.id;b.setAttribute('aria-pressed',String(p.id===config.id));b.addEventListener('click',()=>usePreset(p.id));$('presets').append(b);});
+for(let b=1;b<=6;b++)for(let a=1;a<=6;a++){const button=document.createElement('button');button.className='matrix-cell';button.dataset.a=a;button.dataset.b=b;button.setAttribute('aria-label',`横向 ${a}，纵向 ${b}`);const c=document.createElement('canvas');c.width=c.height=180;c.setAttribute('aria-hidden','true');const label=document.createElement('span');label.textContent=`${a}:${b}`;button.append(c,label);button.addEventListener('click',()=>{config={...config,a:String(a),b:String(b),model:'basic'};custom();tab='curve';playing=true;prepare();renderTerms();sync();render();});$('matrixGrid').append(button);}
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>setTab(b.dataset.tab)));
+for(const axis of ['a','b']){
+ $(axis).addEventListener('change',()=>{try{const f=H.frequency($(axis).value);clearError();change(()=>config[axis]=f.text);}catch(e){error(e.message,$(axis));}});
+ $(axis+'Range').addEventListener('input',()=>{clearError();change(()=>config[axis]=$(axis+'Range').value);});
+}
+function phaseChange(value){if(!Number.isFinite(value)||value<0||value>360){error('相位范围为 0°～360°',$('phase'));return;}clearError();if(tab==='scan')playing=false;change(()=>config.phase=value===360?0:value);}
+ $('phase').addEventListener('change',()=>{if($('phase').value.trim()===''){error('请输入相位角度',$('phase'));return;}phaseChange(Number($('phase').value));});$('phaseRange').addEventListener('input',()=>phaseChange(Number($('phaseRange').value)));
+document.querySelectorAll('[data-phase]').forEach(b=>b.addEventListener('click',()=>phaseChange(Number(b.dataset.phase))));
+for(const key of ['A','B'])$(key).addEventListener('input',()=>{const equal=$('equalAmp').checked;change(()=>{config[key]=Number($(key).value);if(equal)config[key==='A'?'B':'A']=config[key];});});
+ $('equalAmp').addEventListener('change',()=>{config.lockAmplitude=$('equalAmp').checked;if(config.lockAmplitude)change(()=>config.B=config.A);});
+ $('model').addEventListener('change',()=>{change(()=>config.model=$('model').value);renderTerms();});
+ for(const axis of ['x','y'])$(axis==='x'?'addX':'addY').addEventListener('click',()=>{if(config[axis+'Terms'].length>=3)return;change(()=>config[axis+'Terms'].push({frequency:String(3+2*config[axis+'Terms'].length),amplitude:.2,phase:0}));renderTerms();});
+ $('normalize').addEventListener('change',()=>change(()=>config.normalize=$('normalize').checked));
+ for(const key of ['view','color'])$(key).addEventListener('change',()=>{config[key]=$(key).value;sync();render();});
+ for(const key of ['glow','axes','projections','ghost'])$(key).addEventListener('change',()=>{config[key]=$(key).checked;render();});
+ $('speed').addEventListener('input',()=>{config.speed=Number($('speed').value);syncLive();$('speedOut').value=config.speed.toFixed(1)+'×';});
+ $('lineWidth').addEventListener('input',()=>{config.lineWidth=Number($('lineWidth').value);$('lineWidthOut').value=config.lineWidth.toFixed(1);render();});
+ $('turns').addEventListener('input',()=>{config.turns=Number($('turns').value);prepare();sync();render();});
+ $('resetParams').addEventListener('click',()=>usePreset('reference'));
+ $('play').addEventListener('click',()=>{if(!playing&&info.truncated&&theta>=info.windowTheta&&config.view!=='trail'&&tab!=='scan'){theta=0;maxTheta=0;}playing=!playing;syncLive();render();});
+ $('step').addEventListener('click',()=>{playing=false;if(tab==='scan'){config.phase=(config.phase+1)%360;custom();prepare(false);}theta+=TAU/180;if(info.truncated&&config.view!=='trail')theta=Math.min(theta,info.windowTheta);maxTheta=Math.max(theta,maxTheta);syncLive();render();});
+ $('restart').addEventListener('click',()=>{if(tab==='scan'){config.phase=0;custom();}prepare();sync();render();});
+ $('complete').addEventListener('click',()=>{theta=info.windowTheta;maxTheta=theta;playing=false;syncLive();render();});
+ $('exportConfig').addEventListener('click',()=>{download(new Blob([JSON.stringify(exportConfig(),null,2)],{type:'application/json'}),'harmonic-parameters.json');toast('已导出当前公式与参数');});
+ $('exportImage').addEventListener('click',()=>{imageCanvas().toBlob(blob=>{if(blob){download(blob,'harmonic-trajectories.png');toast('已导出轨迹、波形和公式');}else toast('导出失败，请重试');},'image/png');});
+ window.addEventListener('resize',()=>{matrixDirty=true;render();});document.addEventListener('visibilitychange',()=>{last=0;});
+ document.addEventListener('keydown',e=>{if(e.code==='Space'&&!/INPUT|SELECT|TEXTAREA|BUTTON|SUMMARY/.test(document.activeElement.tagName)){e.preventDefault();$('play').click();}});
+ prepare();renderTerms();sync();render();requestAnimationFrame(frame);
+ if(new URLSearchParams(location.search).has('qa'))window.__harmonicStudio={state:()=>({config:clone(config),tab,playing,theta,maxTheta,frames,info:clone(info),point:fn(theta),pointCount}),usePreset,setTab,advance:seconds=>{advance(seconds);syncLive();render();},exportConfig,imageCanvas,point:H.point};
+})();
+</script></body></html>

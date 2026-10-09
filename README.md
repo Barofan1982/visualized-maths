@@ -1,2 +1,0 @@
-# visualized-maths
-visualized-maths
